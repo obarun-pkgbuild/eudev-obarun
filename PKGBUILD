@@ -5,7 +5,7 @@
 
 pkgbase=eudev
 pkgname=eudev-obarun
-pkgver=3.2.2
+pkgver=3.2.4
 pkgrel=1
 pkgdesc="The userspace dev tools (udev) forked by Gentoo"
 arch=(x86_64)
@@ -24,7 +24,7 @@ source=("http://dev.gentoo.org/~blueness/eudev/eudev-${pkgver}.tar.gz"
 		'initcpio_hooks'
 		'initcpio_install'
 		'udev-hwdb.hook')
-sha256sums=('3e4c56ec2fc1854afd0a31f3affa48f922c62d40ee12a0c1a4b4f152ef5b0f63'
+sha256sums=('dddcf4c89b21f5f3210f7e4d3888c92cbfc657ff734ac21b6bdd3f5bcb146fed'
             '892ce43218e0a458981bbce451252c8987dc398e60b8de288e7542b8f2409c13'
             '77dd1fd318b4456409aceb077f060b87944defb07cf39d29ad1968dc6f361875'
             '846e9ddbb95c8394ba7efe75107cc1308426921bc042f5d6b48fa4c2dcbac151')
@@ -46,7 +46,6 @@ build() {
    	 make clean
  	fi
 
-	#./autogen.sh
 	./configure \
 		--prefix=/usr \
 		--with-rootprefix=/usr \
@@ -68,9 +67,6 @@ package() {
 	install -Dm644 "${srcdir}/initcpio_install" "${pkgdir}/usr/lib/initcpio/install/udev"
 	install -Dm644 "${srcdir}/udev-hwdb.hook" "${pkgdir}/usr/share/libalpm/hooks/udev-hwdb.hook"
 	
-	# input group is not used in Arch Linux at this moment
-	#sed '/GROUP="input"/d' -i "${pkgdir}/usr/lib/udev/rules.d/50-udev-default.rules"
-
   	# Getting udev version
   	udevver=$(grep UDEV_VERSION configure.ac | egrep -o "[0-9]{3}")
   	provides+=("udev=$udevver")
