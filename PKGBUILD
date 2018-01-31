@@ -5,7 +5,7 @@
 
 pkgbase=eudev
 pkgname=eudev-obarun
-pkgver=3.2.4
+pkgver=3.2.5
 pkgrel=1
 pkgdesc="The userspace dev tools (udev) forked by Gentoo"
 arch=(x86_64)
@@ -24,7 +24,7 @@ source=("http://dev.gentoo.org/~blueness/eudev/eudev-${pkgver}.tar.gz"
 		'initcpio_hooks'
 		'initcpio_install'
 		'udev-hwdb.hook')
-sha256sums=('dddcf4c89b21f5f3210f7e4d3888c92cbfc657ff734ac21b6bdd3f5bcb146fed'
+sha256sums=('49c2d04105cad2526302627e040fa24b1916a9a3e059539bc8bb919b973890af'
             '892ce43218e0a458981bbce451252c8987dc398e60b8de288e7542b8f2409c13'
             '77dd1fd318b4456409aceb077f060b87944defb07cf39d29ad1968dc6f361875'
             '846e9ddbb95c8394ba7efe75107cc1308426921bc042f5d6b48fa4c2dcbac151')
